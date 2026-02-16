@@ -261,4 +261,89 @@ h3 {
     color: #666;
     line-height: 1.6;
 }
+
+/* ===== Showcase Section ===== */
+.showcase {
+    background-color: white;
+}
+
+.builds-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.build-card {
+    background: linear-gradient(135deg, var(--dark-bg) 0%, #16213e 100%);
+    color: var(--text-light);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.build-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 0%, rgba(0, 212, 255, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.build-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.build-label {
+    display: inline-block;
+    background-color: var(--accent);
+    color: var(--dark-bg);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.build-card h3 {
+    color: var(--text-light);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.build-specs {
+    margin-bottom: 1.5rem;
+}
+
+.build-specs p {
+    color: rgba(236, 240, 241, 0.8);
+    margin-bottom: 0.5rem;
+    padding-left: 1rem;
+    position: relative;
+}
+
+.build-specs p::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+}
+
+.build-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+}
+
+.build-card .btn {
+    width: 100%;
+}
 }
