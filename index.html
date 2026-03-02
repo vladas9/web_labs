@@ -328,13 +328,7 @@
             });
         });
 
-        // Mascot: appear after 3 seconds
         const mascot = document.getElementById('mascot');
-        setTimeout(() => {
-            mascot.classList.add('visible');
-        }, 3000);
-
-        // Close mascot tooltip when clicking elsewhere
         document.addEventListener('click', (e) => {
             if (!mascot.contains(e.target)) {
                 mascot.querySelector('.mascot-tooltip').style.opacity = '0';
