@@ -31,3 +31,11 @@ Temporary Items
 
 # OS
 Thumbs.db
+
+# Astro
+node_modules/
+dist/
+.astro/
+
+# package manager lockfile (optional)
+package-lock.json
