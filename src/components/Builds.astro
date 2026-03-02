@@ -1,0 +1,46 @@
+---
+interface Spec {
+    text: string;
+}
+
+interface Build {
+    label: string;
+    title: string;
+    specs: string[];
+    price: string;
+}
+
+interface Props {
+    title?: string;
+    subtitle?: string;
+    builds: Build[];
+}
+
+const {
+    title = 'Featured Builds',
+    subtitle = 'Explore our carefully crafted custom PC configurations',
+    builds,
+} = Astro.props;
+---
+
+<section id="builds" class="showcase">
+    <div class="container">
+        <h2 class="section-title">{title}</h2>
+        <p class="section-subtitle">{subtitle}</p>
+        <div class="builds-grid">
+            {builds.map(build => (
+                <div class="build-card">
+                    <div class="build-label">{build.label}</div>
+                    <h3>{build.title}</h3>
+                    <div class="build-specs">
+                        {build.specs.map(spec => (
+                            <p>{spec}</p>
+                        ))}
+                    </div>
+                    <div class="build-price">From {build.price}</div>
+                    <a href="#contact" class="btn btn-primary">Configure</a>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>

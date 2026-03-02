@@ -1,0 +1,39 @@
+---
+interface Stat {
+    number: string;
+    label: string;
+}
+
+interface Props {
+    title?: string;
+    stats?: Stat[];
+    ctaText?: string;
+    ctaHref?: string;
+}
+
+const {
+    title = 'Why Go Custom?',
+    stats = [
+        { number: '500+', label: 'Builds Completed' },
+        { number: '99%', label: 'Client Satisfaction' },
+        { number: '3-5', label: 'Day Turnaround' },
+    ],
+    ctaText = 'Get Your Custom Build',
+    ctaHref = '#contact',
+} = Astro.props;
+---
+
+<section class="mobile-only-section">
+    <div class="container">
+        <h2 class="mobile-only-title">{title}</h2>
+        <div class="mobile-stats">
+            {stats.map(stat => (
+                <div class="mobile-stat">
+                    <span class="stat-number">{stat.number}</span>
+                    <span class="stat-label">{stat.label}</span>
+                </div>
+            ))}
+        </div>
+        <a href={ctaHref} class="btn btn-primary btn-large mobile-cta">{ctaText}</a>
+    </div>
+</section>

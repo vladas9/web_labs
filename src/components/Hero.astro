@@ -1,0 +1,32 @@
+---
+interface Props {
+    title: string;
+    subtitle: string;
+    primaryBtnText?: string;
+    primaryBtnHref?: string;
+    secondaryBtnText?: string;
+    secondaryBtnHref?: string;
+}
+
+const {
+    title,
+    subtitle,
+    primaryBtnText = 'Start Your Build',
+    primaryBtnHref = '#contact',
+    secondaryBtnText = 'View Builds',
+    secondaryBtnHref = '#builds',
+} = Astro.props;
+---
+
+<section id="home" class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <h1 class="hero-title">{title}</h1>
+            <p class="hero-subtitle">{subtitle}</p>
+            <div class="hero-buttons">
+                <a href={primaryBtnHref} class="btn btn-primary btn-large">{primaryBtnText}</a>
+                <a href={secondaryBtnHref} class="btn btn-secondary btn-large">{secondaryBtnText}</a>
+            </div>
+        </div>
+    </div>
+</section>

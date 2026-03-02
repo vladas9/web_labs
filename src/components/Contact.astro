@@ -1,0 +1,53 @@
+---
+interface Props {
+    title?: string;
+    subtitle?: string;
+}
+
+const {
+    title = 'Get Started Today',
+    subtitle = "Tell us about your dream PC and we'll make it happen",
+} = Astro.props;
+---
+
+<section id="contact" class="contact bg-white py-20">
+    <div class="container">
+        <h2 class="section-title">{title}</h2>
+        <p class="section-subtitle">{subtitle}</p>
+        <form class="contact-form max-w-2xl mx-auto mt-12">
+            <div class="form-row grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div class="form-group flex flex-col">
+                    <input type="text" placeholder="Your Name" required
+                        class="px-4 py-3 border-2 border-gray-200 rounded-md text-base transition-all focus:outline-none focus:border-primary">
+                </div>
+                <div class="form-group flex flex-col">
+                    <input type="email" placeholder="Your Email" required
+                        class="px-4 py-3 border-2 border-gray-200 rounded-md text-base transition-all focus:outline-none focus:border-primary">
+                </div>
+            </div>
+            <div class="form-row grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div class="form-group flex flex-col">
+                    <input type="tel" placeholder="Phone Number"
+                        class="px-4 py-3 border-2 border-gray-200 rounded-md text-base transition-all focus:outline-none focus:border-primary">
+                </div>
+                <div class="form-group flex flex-col">
+                    <select required
+                        class="px-4 py-3 border-2 border-gray-200 rounded-md text-base transition-all focus:outline-none focus:border-primary">
+                        <option value="">Select Build Type</option>
+                        <option value="gaming">Gaming PC</option>
+                        <option value="creator">Content Creation</option>
+                        <option value="workstation">Workstation</option>
+                        <option value="custom">Custom Build</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group flex flex-col">
+                <textarea placeholder="Tell us about your requirements, budget, and preferred components..."
+                    rows="5" required
+                    class="px-4 py-3 border-2 border-gray-200 rounded-md text-base transition-all focus:outline-none focus:border-primary resize-y min-h-[120px]"></textarea>
+            </div>
+            <button type="submit"
+                class="btn btn-primary btn-large w-full mt-4 cursor-pointer border-none">Send Request</button>
+        </form>
+    </div>
+</section>

@@ -1,0 +1,49 @@
+---
+interface Props {
+    message?: string;
+    delay?: number;
+}
+
+const {
+    message = 'Hey there! Need help building your dream PC? Click "Get Started" above! 🖥️',
+    delay = 3000,
+} = Astro.props;
+---
+
+<div class="mascot" id="mascot">
+    <div class="mascot-tooltip">{message}</div>
+    <svg class="mascot-svg" viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg">
+        <rect x="25" y="45" width="70" height="55" rx="12" fill="#00d4ff" stroke="#1a1a2e" stroke-width="2" />
+        <rect x="35" y="52" width="50" height="35" rx="5" fill="#1a1a2e" />
+        <circle cx="50" cy="67" r="5" fill="#00d4ff" class="mascot-eye" />
+        <circle cx="70" cy="67" r="5" fill="#00d4ff" class="mascot-eye" />
+        <path d="M50 78 Q60 85 70 78" stroke="#00d4ff" stroke-width="2" fill="none" stroke-linecap="round" />
+        <line x1="60" y1="45" x2="60" y2="28" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round" />
+        <circle cx="60" cy="24" r="6" fill="#ff6b35" class="mascot-antenna" />
+        <rect x="10" y="55" width="15" height="8" rx="4" fill="#00d4ff" stroke="#1a1a2e" stroke-width="2" class="mascot-arm-left" />
+        <rect x="95" y="55" width="15" height="8" rx="4" fill="#00d4ff" stroke="#1a1a2e" stroke-width="2" class="mascot-arm-right" />
+        <rect x="35" y="100" width="14" height="18" rx="5" fill="#00d4ff" stroke="#1a1a2e" stroke-width="2" />
+        <rect x="71" y="100" width="14" height="18" rx="5" fill="#00d4ff" stroke="#1a1a2e" stroke-width="2" />
+        <rect x="30" y="115" width="24" height="10" rx="5" fill="#1a1a2e" />
+        <rect x="66" y="115" width="24" height="10" rx="5" fill="#1a1a2e" />
+        <circle cx="60" cy="92" r="4" fill="none" stroke="#1a1a2e" stroke-width="1.5" />
+        <line x1="60" y1="88" x2="60" y2="91" stroke="#1a1a2e" stroke-width="1.5" stroke-linecap="round" />
+    </svg>
+</div>
+
+<script define:vars={{ delay }}>
+    const mascot = document.getElementById('mascot');
+    setTimeout(() => {
+        mascot?.classList.add('visible');
+    }, delay);
+
+    document.addEventListener('click', (e) => {
+        if (mascot && !mascot.contains(e.target)) {
+            const tooltip = mascot.querySelector('.mascot-tooltip');
+            if (tooltip) {
+                tooltip.style.opacity = '0';
+                tooltip.style.visibility = 'hidden';
+            }
+        }
+    });
+</script>
