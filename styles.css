@@ -94,7 +94,9 @@ section {
 }
 
 /* Headings */
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     color: var(--text-dark);
     font-weight: 700;
 }
@@ -140,6 +142,7 @@ h3 {
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
 }
+
 .btn-large {
     padding: 15px 40px;
     font-size: 1.1rem;
@@ -162,7 +165,7 @@ h3 {
     left: 0;
     right: 0;
     bottom: 0;
-    background: 
+    background:
         radial-gradient(circle at 20% 50%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
         radial-gradient(circle at 80% 80%, rgba(0, 102, 204, 0.1) 0%, transparent 50%);
     pointer-events: none;
@@ -479,5 +482,4 @@ h3 {
     padding-top: 2rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     color: rgba(236, 240, 241, 0.6);
-}
 }
