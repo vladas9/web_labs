@@ -507,15 +507,20 @@ h3 {
 
 /* Mascot bounce animation */
 @keyframes mascotBounce {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0);
     }
+
     25% {
         transform: translateY(-12px) rotate(3deg);
     }
+
     50% {
         transform: translateY(0);
     }
+
     75% {
         transform: translateY(-8px) rotate(-3deg);
     }
@@ -523,9 +528,13 @@ h3 {
 
 /* Eye blink animation */
 @keyframes blink {
-    0%, 90%, 100% {
+
+    0%,
+    90%,
+    100% {
         transform: scaleY(1);
     }
+
     95% {
         transform: scaleY(0.1);
     }
@@ -538,10 +547,13 @@ h3 {
 
 /* Antenna glow */
 @keyframes antennaGlow {
-    0%, 100% {
+
+    0%,
+    100% {
         fill: #ff6b35;
         filter: drop-shadow(0 0 3px #ff6b35);
     }
+
     50% {
         fill: #ffcc00;
         filter: drop-shadow(0 0 8px #ffcc00);
@@ -554,18 +566,24 @@ h3 {
 
 /* Arm wave animation */
 @keyframes waveLeft {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: rotate(0deg);
     }
+
     50% {
         transform: rotate(-15deg);
     }
 }
 
 @keyframes waveRight {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: rotate(0deg);
     }
+
     50% {
         transform: rotate(15deg);
     }
@@ -731,6 +749,7 @@ h3 {
 
 /* Mobile */
 @media (max-width: 768px) {
+
     /* Navigation */
     .hamburger {
         display: flex;
