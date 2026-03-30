@@ -11,6 +11,9 @@ import Contact from '../components/Contact.astro';
 import Footer from '../components/Footer.astro';
 import Mascot from '../components/Mascot.astro';
 
+const [siteEntry] = await getCollection('site');
+const s = siteEntry.data;
+
 const servicesCollection = await getCollection('services');
 const services = servicesCollection
     .sort((a, b) => a.data.order - b.data.order)
@@ -40,17 +43,33 @@ const aboutItems = aboutCollection
 ---
 
 <Layout title="Custom PC Build Service | Build Your Dream PC">
-    <Header />
+    <Header logoText={s.logo_text} ctaText={s.header_cta_text} />
     <Hero
-        title="Build Your Dream PC"
-        subtitle="Expert custom PC building service for gamers, creators, and professionals. Get personalized recommendations, professional assembly, and ongoing support."
+        title={s.hero_title}
+        subtitle={s.hero_subtitle}
+        primaryBtnText={s.hero_primary_btn_text}
+        primaryBtnHref={s.hero_primary_btn_href}
+        secondaryBtnText={s.hero_secondary_btn_text}
+        secondaryBtnHref={s.hero_secondary_btn_href}
     />
-    <MobileStats />
-    <Services services={services} />
-    <Builds builds={builds} />
-    <About items={aboutItems} />
-    <Contact />
-    <Footer />
+    <MobileStats
+        title={s.stats_title}
+        stats={s.stats}
+        ctaText={s.stats_cta_text}
+        ctaHref={s.stats_cta_href}
+    />
+    <Services title={s.services_title} subtitle={s.services_subtitle} services={services} />
+    <Builds title={s.builds_title} subtitle={s.builds_subtitle} builds={builds} />
+    <About title={s.about_title} subtitle={s.about_subtitle} items={aboutItems} />
+    <Contact title={s.contact_title} subtitle={s.contact_subtitle} />
+    <Footer
+        logoText={s.logo_text}
+        tagline={s.site_tagline}
+        email={s.footer_email}
+        phone={s.footer_phone}
+        hours={s.footer_hours}
+        copyright={s.footer_copyright}
+    />
     <Mascot />
 
     <script>

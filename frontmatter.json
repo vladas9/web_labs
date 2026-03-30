@@ -21,7 +21,8 @@
           "title": "Description",
           "name": "description",
           "type": "string",
-          "required": true
+          "required": true,
+          "maximum": 300
         },
         {
           "title": "Order",
@@ -81,7 +82,8 @@
           "title": "Description",
           "name": "description",
           "type": "string",
-          "required": true
+          "required": true,
+          "maximum": 300
         },
         {
           "title": "Order",
@@ -92,21 +94,64 @@
       ]
     }
   ],
+  "frontMatter.taxonomy.contentTypes": [
+    {
+      "name": "site",
+      "pageBundle": false,
+      "fields": [
+        { "title": "Logo Text", "name": "logo_text", "type": "string", "required": true },
+        { "title": "Site Tagline", "name": "site_tagline", "type": "string", "required": true, "maximum": 300 },
+        { "title": "Hero Title", "name": "hero_title", "type": "string", "required": true },
+        { "title": "Hero Subtitle", "name": "hero_subtitle", "type": "string", "required": true, "maximum": 300 },
+        { "title": "Hero Primary Button Text", "name": "hero_primary_btn_text", "type": "string", "required": true },
+        { "title": "Hero Primary Button Link", "name": "hero_primary_btn_href", "type": "string", "required": true },
+        { "title": "Hero Secondary Button Text", "name": "hero_secondary_btn_text", "type": "string", "required": true },
+        { "title": "Hero Secondary Button Link", "name": "hero_secondary_btn_href", "type": "string", "required": true },
+        { "title": "Header CTA Text", "name": "header_cta_text", "type": "string", "required": true },
+        { "title": "Services Section Title", "name": "services_title", "type": "string", "required": true },
+        { "title": "Services Section Subtitle", "name": "services_subtitle", "type": "string", "required": true, "maximum": 300 },
+        { "title": "Builds Section Title", "name": "builds_title", "type": "string", "required": true },
+        { "title": "Builds Section Subtitle", "name": "builds_subtitle", "type": "string", "required": true, "maximum": 300 },
+        { "title": "About Section Title", "name": "about_title", "type": "string", "required": true },
+        { "title": "About Section Subtitle", "name": "about_subtitle", "type": "string", "required": true, "maximum": 300 },
+        { "title": "Stats Section Title", "name": "stats_title", "type": "string", "required": true },
+        { "title": "Stats CTA Text", "name": "stats_cta_text", "type": "string", "required": true },
+        { "title": "Stats CTA Link", "name": "stats_cta_href", "type": "string", "required": true },
+        { "title": "Contact Section Title", "name": "contact_title", "type": "string", "required": true },
+        { "title": "Contact Section Subtitle", "name": "contact_subtitle", "type": "string", "required": true, "maximum": 300 },
+        { "title": "Footer Email", "name": "footer_email", "type": "string", "required": true },
+        { "title": "Footer Phone", "name": "footer_phone", "type": "string", "required": true },
+        { "title": "Footer Hours", "name": "footer_hours", "type": "string", "required": true },
+        { "title": "Footer Copyright", "name": "footer_copyright", "type": "string", "required": true, "maximum": 300 }
+      ]
+    }
+  ],
   "frontMatter.content.pageFolders": [
+    {
+      "title": "Site Settings",
+      "path": "[[workspace]]/src/content/site",
+      "contentTypes": ["site"]
+    },
     {
       "title": "Services",
       "path": "[[workspace]]/src/content/services",
-      "contentTypes": ["service"]
+      "contentTypes": [
+        "service"
+      ]
     },
     {
       "title": "Builds",
       "path": "[[workspace]]/src/content/builds",
-      "contentTypes": ["build"]
+      "contentTypes": [
+        "build"
+      ]
     },
     {
       "title": "About",
       "path": "[[workspace]]/src/content/about",
-      "contentTypes": ["about"]
+      "contentTypes": [
+        "about"
+      ]
     }
   ],
   "frontMatter.content.publicFolder": "public",

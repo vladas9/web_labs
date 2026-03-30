@@ -1,6 +1,7 @@
 ---
 interface Props {
     logoText?: string;
+    tagline?: string;
     email?: string;
     phone?: string;
     hours?: string;
@@ -9,6 +10,7 @@ interface Props {
 
 const {
     logoText = 'CustomPC',
+    tagline = 'Building dream PCs since 2020. Your trusted partner for custom computer builds.',
     email = 'info@custompc.com',
     phone = '+1 (555) 123-4567',
     hours = 'Mon-Fri 9AM-6PM',
@@ -28,8 +30,7 @@ const quickLinks = [
         <div class="footer-content grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             <div class="footer-section">
                 <h3 class="logo text-accent text-3xl font-bold mb-4">{logoText}</h3>
-                <p class="text-gray-400 leading-relaxed">Building dream PCs since 2020. Your trusted partner for
-                    custom computer builds.</p>
+                <p class="text-gray-400 leading-relaxed">{tagline}</p>
             </div>
             <div class="footer-section">
                 <h4 class="text-text-light font-semibold text-lg mb-4">Quick Links</h4>
