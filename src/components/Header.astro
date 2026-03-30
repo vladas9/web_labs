@@ -1,9 +1,10 @@
 ---
 interface Props {
     logoText?: string;
+    ctaText?: string;
 }
 
-const { logoText = 'CustomPC' } = Astro.props;
+const { logoText = 'CustomPC', ctaText = 'Get Started' } = Astro.props;
 
 const navItems = [
     { href: '#home', label: 'Home' },
@@ -24,7 +25,7 @@ const navItems = [
                         <li><a href={item.href} class="nav-link">{item.label}</a></li>
                     ))}
                 </ul>
-                <a href="#contact" class="btn btn-primary btn-nav">Get Started</a>
+                <a href="#contact" class="btn btn-primary btn-nav">{ctaText}</a>
                 <button class="hamburger" aria-label="Toggle menu">
                     <span class="hamburger-line"></span>
                     <span class="hamburger-line"></span>
