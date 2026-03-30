@@ -7,5 +7,96 @@
   </head>
   <body>
     <script src="https://unpkg.com/decap-cms@3.11.0/dist/decap-cms.js"></script>
+    <script>
+      CMS.init({
+        config: {
+          backend: {
+            name: 'github',
+            repo: 'vladas9/web_labs',
+            branch: 'lab4',
+            auth_type: 'pkce',
+            app_id: 'Ov23li1yrRx6WK7R1PFT',
+          },
+          media_folder: 'public/images',
+          public_folder: '/web_labs/images',
+          collections: [
+            {
+              name: 'site',
+              label: 'Site Settings',
+              files: [
+                {
+                  name: 'settings',
+                  label: 'Settings',
+                  file: 'src/content/site/settings.md',
+                  fields: [
+                    { label: 'Logo Text', name: 'logo_text', widget: 'string' },
+                    { label: 'Site Tagline', name: 'site_tagline', widget: 'string' },
+                    { label: 'Hero Title', name: 'hero_title', widget: 'string' },
+                    { label: 'Hero Subtitle', name: 'hero_subtitle', widget: 'text' },
+                    { label: 'Hero Primary Button Text', name: 'hero_primary_btn_text', widget: 'string' },
+                    { label: 'Hero Primary Button Link', name: 'hero_primary_btn_href', widget: 'string' },
+                    { label: 'Hero Secondary Button Text', name: 'hero_secondary_btn_text', widget: 'string' },
+                    { label: 'Hero Secondary Button Link', name: 'hero_secondary_btn_href', widget: 'string' },
+                    { label: 'Header CTA Text', name: 'header_cta_text', widget: 'string' },
+                    { label: 'Services Section Title', name: 'services_title', widget: 'string' },
+                    { label: 'Services Section Subtitle', name: 'services_subtitle', widget: 'string' },
+                    { label: 'Builds Section Title', name: 'builds_title', widget: 'string' },
+                    { label: 'Builds Section Subtitle', name: 'builds_subtitle', widget: 'string' },
+                    { label: 'About Section Title', name: 'about_title', widget: 'string' },
+                    { label: 'About Section Subtitle', name: 'about_subtitle', widget: 'string' },
+                    { label: 'Stats Section Title', name: 'stats_title', widget: 'string' },
+                    {
+                      label: 'Stats', name: 'stats', widget: 'list',
+                      fields: [
+                        { label: 'Number', name: 'number', widget: 'string' },
+                        { label: 'Label', name: 'label', widget: 'string' },
+                      ],
+                    },
+                    { label: 'Stats CTA Text', name: 'stats_cta_text', widget: 'string' },
+                    { label: 'Stats CTA Link', name: 'stats_cta_href', widget: 'string' },
+                    { label: 'Contact Section Title', name: 'contact_title', widget: 'string' },
+                    { label: 'Contact Section Subtitle', name: 'contact_subtitle', widget: 'string' },
+                    { label: 'Footer Email', name: 'footer_email', widget: 'string' },
+                    { label: 'Footer Phone', name: 'footer_phone', widget: 'string' },
+                    { label: 'Footer Hours', name: 'footer_hours', widget: 'string' },
+                    { label: 'Footer Copyright', name: 'footer_copyright', widget: 'string' },
+                  ],
+                },
+              ],
+            },
+            {
+              name: 'services', label: 'Services',
+              folder: 'src/content/services', create: true, slug: '{{slug}}',
+              fields: [
+                { label: 'Icon', name: 'icon', widget: 'string' },
+                { label: 'Title', name: 'title', widget: 'string' },
+                { label: 'Description', name: 'description', widget: 'text' },
+                { label: 'Order', name: 'order', widget: 'number' },
+              ],
+            },
+            {
+              name: 'builds', label: 'Builds',
+              folder: 'src/content/builds', create: true, slug: '{{slug}}',
+              fields: [
+                { label: 'Label', name: 'label', widget: 'string' },
+                { label: 'Title', name: 'title', widget: 'string' },
+                { label: 'Specs', name: 'specs', widget: 'list', field: { label: 'Spec', name: 'spec', widget: 'string' } },
+                { label: 'Price', name: 'price', widget: 'string' },
+                { label: 'Order', name: 'order', widget: 'number' },
+              ],
+            },
+            {
+              name: 'about', label: 'About Items',
+              folder: 'src/content/about', create: true, slug: '{{slug}}',
+              fields: [
+                { label: 'Title', name: 'title', widget: 'string' },
+                { label: 'Description', name: 'description', widget: 'text' },
+                { label: 'Order', name: 'order', widget: 'number' },
+              ],
+            },
+          ],
+        },
+      });
+    </script>
   </body>
 </html>
