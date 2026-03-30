@@ -1,0 +1,115 @@
+{
+  "$schema": "https://frontmatter.codes/frontmatter.schema.json",
+  "frontMatter.taxonomy.contentTypes": [
+    {
+      "name": "service",
+      "pageBundle": false,
+      "fields": [
+        {
+          "title": "Icon",
+          "name": "icon",
+          "type": "string",
+          "required": true
+        },
+        {
+          "title": "Title",
+          "name": "title",
+          "type": "string",
+          "required": true
+        },
+        {
+          "title": "Description",
+          "name": "description",
+          "type": "string",
+          "required": true
+        },
+        {
+          "title": "Order",
+          "name": "order",
+          "type": "number",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "build",
+      "pageBundle": false,
+      "fields": [
+        {
+          "title": "Label",
+          "name": "label",
+          "type": "string",
+          "required": true
+        },
+        {
+          "title": "Title",
+          "name": "title",
+          "type": "string",
+          "required": true
+        },
+        {
+          "title": "Specs",
+          "name": "specs",
+          "type": "list",
+          "required": true
+        },
+        {
+          "title": "Price",
+          "name": "price",
+          "type": "string",
+          "required": true
+        },
+        {
+          "title": "Order",
+          "name": "order",
+          "type": "number",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "about",
+      "pageBundle": false,
+      "fields": [
+        {
+          "title": "Title",
+          "name": "title",
+          "type": "string",
+          "required": true
+        },
+        {
+          "title": "Description",
+          "name": "description",
+          "type": "string",
+          "required": true
+        },
+        {
+          "title": "Order",
+          "name": "order",
+          "type": "number",
+          "required": true
+        }
+      ]
+    }
+  ],
+  "frontMatter.content.pageFolders": [
+    {
+      "title": "Services",
+      "path": "[[workspace]]/src/content/services",
+      "contentTypes": ["service"]
+    },
+    {
+      "title": "Builds",
+      "path": "[[workspace]]/src/content/builds",
+      "contentTypes": ["build"]
+    },
+    {
+      "title": "About",
+      "path": "[[workspace]]/src/content/about",
+      "contentTypes": ["about"]
+    }
+  ],
+  "frontMatter.content.publicFolder": "public",
+  "frontMatter.framework.id": "astro",
+  "frontMatter.preview.host": "http://localhost:4321"
+}

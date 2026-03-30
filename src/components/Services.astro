@@ -1,0 +1,35 @@
+---
+interface Service {
+    icon: string;
+    title: string;
+    description: string;
+}
+
+interface Props {
+    title?: string;
+    subtitle?: string;
+    services: Service[];
+}
+
+const {
+    title = 'Our Services',
+    subtitle = 'Everything you need for your perfect custom PC',
+    services,
+} = Astro.props;
+---
+
+<section id="services" class="services">
+    <div class="container">
+        <h2 class="section-title">{title}</h2>
+        <p class="section-subtitle">{subtitle}</p>
+        <div class="services-grid">
+            {services.map(service => (
+                <div class="service-card">
+                    <div class="service-icon">{service.icon}</div>
+                    <h3>{service.title}</h3>
+                    <p>{service.description}</p>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>

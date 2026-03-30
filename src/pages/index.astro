@@ -1,0 +1,73 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import MobileStats from '../components/MobileStats.astro';
+import Services from '../components/Services.astro';
+import Builds from '../components/Builds.astro';
+import About from '../components/About.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+import Mascot from '../components/Mascot.astro';
+
+const servicesCollection = await getCollection('services');
+const services = servicesCollection
+    .sort((a, b) => a.data.order - b.data.order)
+    .map((s) => ({
+        icon: s.data.icon,
+        title: s.data.title,
+        description: s.data.description,
+    }));
+
+const buildsCollection = await getCollection('builds');
+const builds = buildsCollection
+    .sort((a, b) => a.data.order - b.data.order)
+    .map((b) => ({
+        label: b.data.label,
+        title: b.data.title,
+        specs: b.data.specs,
+        price: b.data.price,
+    }));
+
+const aboutCollection = await getCollection('about');
+const aboutItems = aboutCollection
+    .sort((a, b) => a.data.order - b.data.order)
+    .map((a) => ({
+        title: a.data.title,
+        description: a.data.description,
+    }));
+---
+
+<Layout title="Custom PC Build Service | Build Your Dream PC">
+    <Header />
+    <Hero
+        title="Build Your Dream PC"
+        subtitle="Expert custom PC building service for gamers, creators, and professionals. Get personalized recommendations, professional assembly, and ongoing support."
+    />
+    <MobileStats />
+    <Services services={services} />
+    <Builds builds={builds} />
+    <About items={aboutItems} />
+    <Contact />
+    <Footer />
+    <Mascot />
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        hamburger?.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu?.classList.toggle('active');
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger?.classList.remove('active');
+                navMenu?.classList.remove('active');
+            });
+        });
+    </script>
+</Layout>

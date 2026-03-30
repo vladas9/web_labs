@@ -1,0 +1,36 @@
+---
+interface Props {
+    logoText?: string;
+}
+
+const { logoText = 'CustomPC' } = Astro.props;
+
+const navItems = [
+    { href: '#home', label: 'Home' },
+    { href: '#services', label: 'Services' },
+    { href: '#builds', label: 'Builds' },
+    { href: '#about', label: 'About' },
+    { href: '#contact', label: 'Contact' },
+];
+---
+
+<header class="header">
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="#" class="logo">{logoText}</a>
+                <ul class="nav-menu">
+                    {navItems.map(item => (
+                        <li><a href={item.href} class="nav-link">{item.label}</a></li>
+                    ))}
+                </ul>
+                <a href="#contact" class="btn btn-primary btn-nav">Get Started</a>
+                <button class="hamburger" aria-label="Toggle menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+</header>
