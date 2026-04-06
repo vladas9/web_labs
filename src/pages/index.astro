@@ -25,6 +25,7 @@ const services = servicesCollection
 
 const buildsCollection = await getCollection('builds');
 const builds = buildsCollection
+    .filter((b) => b.data.published !== false)
     .sort((a, b) => a.data.order - b.data.order)
     .map((b) => ({
         label: b.data.label,

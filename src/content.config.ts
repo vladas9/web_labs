@@ -50,6 +50,7 @@ const builds = defineCollection({
         specs: z.array(z.string()),
         price: z.string(),
         order: z.number(),
+        published: z.boolean().default(true),
     }),
 });
 

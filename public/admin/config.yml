@@ -70,6 +70,7 @@ collections:
         field: { label: Spec, name: spec, widget: string }
       - { label: Price, name: price, widget: string }
       - { label: Order, name: order, widget: number }
+      - { label: Published, name: published, widget: boolean, default: true }
 
   - name: about
     label: About Items
